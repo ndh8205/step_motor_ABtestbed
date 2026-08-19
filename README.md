@@ -142,7 +142,11 @@ avrdude -c arduino -p atmega328p -P <포트> -b 115200 -U flash:w:firmware.hex:i
 
 Uno는 시리얼 개방 시 DTR 신호로 재시작한다. 포트를 연 뒤 2초가량 대기하고 명령을 전송한다.
 
-## 5. 유의사항
+## 5. 참고: 초기 작성본
+
+`reference/`에 서비서 이송 제어의 초기 벤치 작성본 두 판본을 두었다. 운용본은 이 코드의 속도 프로파일과 상수를 이어받았고, 여기에 비차단 구동, 실행 중 파라미터 변경, 홀센서 계측을 더하였다. 빌드 대상은 아니다. 판본 간 차이와 운용본과의 대조는 [`reference/README.md`](reference/README.md)에 정리하였다.
+
+## 6. 유의사항
 
 두 소스는 운용본 그대로이므로 스텝모터 구동 외에 릴레이와 압력센서 처리가 함께 들어 있다. 구동부만 확인하려면 A는 `motor_*`와 `hall_*` 함수를, B는 `serviceStepper`, `startMove`, `serviceSchedule`을 참조한다.
 
